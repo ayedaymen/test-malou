@@ -18,7 +18,7 @@ export class TableComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   posts!: Posts[];
-  zx=false
+  isValid=true
   isLoading = true;
   constructor(private postservice: PostsService ) { }
 
@@ -36,9 +36,9 @@ export class TableComponent implements OnInit {
     }
   }
 
-  ngAfterViewInit() {
+  /*ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
-  }
+  }*/
   showPosts() {
     this.postservice.getPostByday(this.dateResive).subscribe(x => {
       this.posts = x;
@@ -47,10 +47,9 @@ export class TableComponent implements OnInit {
       this.dataSource.sort = this.sort;
       this.isLoading = false;
       if(this.posts.length>0)
-      this.zx=true;
+      this.isValid=true;
       else
-      this.zx=false;
-      console.log(this.zx);
+      this.isValid=false;
       
     } ,error => this.isLoading = false)
   }

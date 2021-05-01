@@ -8,7 +8,6 @@ import { DatePikerComponent } from './date-piker/date-piker.component';
 import { TableComponent } from './table/table.component';
 import { NgMaterialModule } from 'src/ng-material.module';
 import { HttpClientModule,  } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +22,7 @@ import { HttpModule } from '@angular/http';
     BrowserAnimationsModule,
     NgMaterialModule,
     HttpClientModule,
-    HttpModule
+    
   ],
   
   providers:[HttpClientModule,

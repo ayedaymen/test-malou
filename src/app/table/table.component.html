@@ -7,7 +7,9 @@
      mode="indeterminate">
     </mat-progress-spinner>
     </div>
-  <table mat-table [dataSource]="dataSource" >
+
+  <table mat-table [dataSource]="dataSource" [ngStyle]="{'display':!isValid ?'none':''}">
+  
     <!-- Position Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> Id </th>
@@ -39,16 +41,13 @@
 
 
   </table>
-  <mat-paginator [pageSizeOptions]="[5, 10, 30]" showFirstLastButtons></mat-paginator>
+  
+  <mat-paginator [ngStyle]="{'display':!isValid ?'none':''}" [pageSizeOptions]="[5, 10, 30]" showFirstLastButtons></mat-paginator>
 </div>
-
-<div *ngIf="isLoading">
+<div *ngIf="isValid===false">
      <p>
       <ngb-alert [dismissible]="false">
         <h1>Warning!</h1> Better check yourself, you're not looking too good.
       </ngb-alert>
     </p>
-
-  
-    
 </div>

@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   
 })
 export class PostsService { 
-  API_URL = `http://localhost:3000/posts/`; 
+  API_URL = `https://backend-malou.herokuapp.com/posts/`; 
   constructor(private http: HttpClient) { }
  
   getPostByday(day:string): Observable<Posts[]> {

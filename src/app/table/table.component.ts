@@ -46,10 +46,10 @@ export class TableComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
       this.isLoading = false;
-      if(this.posts.length>0)
-      this.isValid=true;
+      if(this.posts.length > 0)
+          this.isValid=true;
       else
-      this.isValid=false;
+         this.isValid=false;
       
     } ,error => this.isLoading = false)
   }

@@ -5,7 +5,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Posts } from '../_models/posts';
 import { PostsService } from '../_services/posts.service';
 
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-table',
@@ -36,9 +35,11 @@ export class TableComponent implements OnInit {
     }
   }
 
-  /*ngAfterViewInit() {
+  ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
-  }*/
+  }
+
+  // this method to put post in a table 
   showPosts() {
     this.postservice.getPostByday(this.dateResive).subscribe(x => {
       this.posts = x;

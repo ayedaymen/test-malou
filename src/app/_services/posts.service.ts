@@ -8,8 +8,9 @@ import { HttpClient } from '@angular/common/http';
   
 })
 export class PostsService { 
+  API_URL = `http://localhost:3000/posts/`; 
   constructor(private http: HttpClient) { }
-  API_URL = `http://localhost:3000/posts/`;
+ 
   getPostByday(day:string): Observable<Posts[]> {
     return this.http.get<Posts[]>(this.API_URL+`${day}`);
   }

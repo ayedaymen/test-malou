@@ -3,14 +3,15 @@
     <h4 class="text-dark font-weight-bold my-2 mr-1">
       La List des produits affihées sont de la date d'aujourd'hui</h4>
   </div>
+
   <div class="card card-custom example example-compact gutter-b">
+    
     <div class="card-header">
       <div class="card-title ">
         <h4 class="  font-weight badge badge-pill mt-2 p-5 badge-primary  ml-4">
           List des Produits
         </h4>
       </div>
-
     </div>
 
     <div class="row">
@@ -21,12 +22,15 @@
       </div>
       <div class="col-xl">
         <div class="card-body ">
+          
           <div class="example-events">
             <div *ngFor="let e of events">{{e}}</div>
             <app-table [dateResive]="dateEvent" class="mat-elevation-z8"></app-table>
           </div>
+
         </div>
       </div>
+
     </div>
   </div>
 

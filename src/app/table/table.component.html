@@ -39,7 +39,11 @@
   </table>
   
   <mat-paginator [ngStyle]="{'display':!isValid ?'none':''}" [pageSizeOptions]="[5, 10, 30]" showFirstLastButtons></mat-paginator>
+  
 </div>
+
+<!-- <app-chart [dateTable]="dateResive"style="width: 29rem"></app-chart> -->
+
 <div *ngIf="isValid===false">
      <p>
       <ngb-alert [dismissible]="false">
@@ -47,3 +51,4 @@
       </ngb-alert>
     </p>
 </div>
+

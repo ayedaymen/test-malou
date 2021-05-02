@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -11,7 +11,7 @@ import { PostsService } from '../_services/posts.service';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements OnInit ,AfterViewInit {
   @Input()
   dateResive!: string;
   @ViewChild(MatSort) sort!: MatSort;
@@ -53,6 +53,7 @@ export class TableComponent implements OnInit {
          this.isValid=false;
       
     } ,error => this.isLoading = false)
+    
   }
 }
 

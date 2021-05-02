@@ -8,11 +8,15 @@ import { DatePikerComponent } from './date-piker/date-piker.component';
 import { TableComponent } from './table/table.component';
 import { NgMaterialModule } from 'src/ng-material.module';
 import { HttpClientModule,  } from '@angular/common/http';
+import { CharteComponent } from './chart/chart.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+
 @NgModule({
   declarations: [
     AppComponent,
     DatePikerComponent,
     TableComponent,
+    CharteComponent
   ],
 
   imports: [
@@ -22,7 +26,7 @@ import { HttpClientModule,  } from '@angular/common/http';
     BrowserAnimationsModule,
     NgMaterialModule,
     HttpClientModule,
-    
+    NgApexchartsModule
   ],
   
   providers:[HttpClientModule,

@@ -1,7 +1,7 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CharteComponent } from '../chart/chart.component';
 import { TableComponent } from '../table/table.component';
-
 import { DatePikerComponent } from './date-piker.component';
 
 describe('DatePikerComponent', () => {
@@ -12,7 +12,7 @@ describe('DatePikerComponent', () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
 
-      declarations: [DatePikerComponent,TableComponent]
+      declarations: [DatePikerComponent,TableComponent,CharteComponent]
     })
       .compileComponents();
   });

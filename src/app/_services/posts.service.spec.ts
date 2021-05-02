@@ -46,7 +46,7 @@ describe('PostsService', () => {
 
       });
   
-      const req = httpMock.expectOne(`http://localhost:3000/posts/01-05-2021`);
+      const req = httpMock.expectOne(`https://backend-malou.herokuapp.com/posts/01-05-2021`);
       expect(req.request.method).toBe("GET");
       req.flush(posts);
     });

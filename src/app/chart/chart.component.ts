@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Posts } from '../_models/posts';
 import { PostsService } from '../_services/posts.service';
+
 @Component({
     selector: 'app-chart',
     templateUrl: './chart.component.html',
@@ -60,6 +61,7 @@ export class CharteComponent implements OnInit,OnChanges{
                 {this.postvote120++;}
             });
             this.numberVote.push(this.postevote20, this.postvote50, this.postvote80, this.postvote100, this.postvote120);
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             this.chartOptions = this.getChartOptions(this.numberVote);
             this.sometable = this.numberVote.reduce((a, b) => a + b, 0);
             if (this.sometable > 0)

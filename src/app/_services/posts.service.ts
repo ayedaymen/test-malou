@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Posts } from '../_models/posts';
 import { HttpClient } from '@angular/common/http';
+import { Posts } from '../_models/posts';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 
 })
 export class PostsService {
-  API_URL = `https://backend-malou.herokuapp.com/posts/`;
-  constructor(private http: HttpClient) { }
+    API_URL = 'https://backend-malou.herokuapp.com/posts/';
+    constructor(private http: HttpClient) { }
 
-  getPostByday(day: string): Observable<Posts[]> {
-    return this.http.get<Posts[]>(this.API_URL + `${day}`);
-  }
+    getPostByday(day: string): Observable<Posts[]> {
+        return this.http.get<Posts[]>(this.API_URL + `${day}`);
+    }
 }

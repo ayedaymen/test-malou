@@ -9,7 +9,7 @@ import { CharteComponent } from './chart.component';
 describe('CharteComponent', () => {
     let component: CharteComponent;
     let fixture: ComponentFixture<CharteComponent>;
-    let postsService: any;
+    let postsService: PostsService;
 
     beforeEach(async(() => {
         void TestBed.configureTestingModule({
@@ -22,7 +22,8 @@ describe('CharteComponent', () => {
 
 
 
-    beforeEach(inject([PostsService], () => {
+    beforeEach(inject([PostsService], (s: PostsService) => {
+        postsService=s;
         fixture = TestBed.createComponent(CharteComponent);
         component = fixture.componentInstance;
         component.isValid = true;

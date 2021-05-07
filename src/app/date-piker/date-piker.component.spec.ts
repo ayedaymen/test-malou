@@ -5,25 +5,25 @@ import { TableComponent } from '../table/table.component';
 import { DatePikerComponent } from './date-piker.component';
 
 describe('DatePikerComponent', () => {
-  let component: DatePikerComponent;
-  let fixture: ComponentFixture<DatePikerComponent>;
+    let component: DatePikerComponent;
+    let fixture: ComponentFixture<DatePikerComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [HttpClientTestingModule],
 
-      declarations: [DatePikerComponent,TableComponent,CharteComponent]
-    })
-      .compileComponents();
-  });
+            declarations: [DatePikerComponent,TableComponent,CharteComponent]
+        })
+            .compileComponents();
+    });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(DatePikerComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(DatePikerComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

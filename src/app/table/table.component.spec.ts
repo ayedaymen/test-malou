@@ -9,7 +9,7 @@ import { TableComponent } from './table.component';
 describe('TableComponent', () => {
   let component: TableComponent;
   let fixture: ComponentFixture<TableComponent>;
-  let postsService: any;
+  let postsService: PostsService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

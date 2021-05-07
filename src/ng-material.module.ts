@@ -18,7 +18,7 @@ const materialModules = [
   MatSortModule,
   MatTableModule,
   MatPaginatorModule,
-  MatSortModule, 
+  MatSortModule,
   MatDatepickerModule,
   MatInputModule,
   MatFormFieldModule,

@@ -11,15 +11,15 @@ import { PostsService } from '../_services/posts.service';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit ,AfterViewInit {
+export class TableComponent implements OnInit, AfterViewInit {
   @Input()
   dateResive!: string;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   posts!: Posts[];
-  isValid=true
+  isValid = true;
   isLoading = true;
-  constructor(private postservice: PostsService ) { }
+  constructor(private postservice: PostsService) { }
 
   displayedColumns: string[] = ['id', 'name', 'votes_count', 'day'];
   dataSource = new MatTableDataSource<Posts>(this.posts);
@@ -27,10 +27,10 @@ export class TableComponent implements OnInit ,AfterViewInit {
   ngOnInit() {
     this.showPosts();
   }
-  
+
   ngOnChanges(changes: SimpleChanges) {
     // only run when property "data" changed
-    if (changes['dateResive']) {
+    if (changes.dateResive) {
       this.showPosts();
     }
   }
@@ -39,7 +39,7 @@ export class TableComponent implements OnInit ,AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  // this method to put post in a table 
+  // this method to put post in a table
   showPosts() {
     this.postservice.getPostByday(this.dateResive).subscribe(x => {
       this.posts = x;
@@ -47,13 +47,15 @@ export class TableComponent implements OnInit ,AfterViewInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
       this.isLoading = false;
-      if(this.posts.length > 0)
-          this.isValid=true;
-      else
-         this.isValid=false;
-      
-    } ,error => this.isLoading = false)
-    
+      if (this.posts.length > 0) {
+        this.isValid = true;
+      }
+      else {
+        this.isValid = false;
+      }
+
+    }, error => this.isLoading = false);
+
   }
 }
 

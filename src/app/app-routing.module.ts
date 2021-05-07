@@ -4,7 +4,7 @@ import { DatePikerComponent } from './date-piker/date-piker.component';
 
 const routes: Routes = [
   {
-    path: '',component: DatePikerComponent,
+    path: '', component: DatePikerComponent,
   }
 ];
 

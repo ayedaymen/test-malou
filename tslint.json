@@ -147,6 +147,10 @@
       "element",
       "app",
       "kebab-case"
-    ]
+    ],
+    "ordered-imports": [true, {
+      "import-sources-order": "any",
+      "named-imports-order": "case-insensitive"
+    }]
   }
 }
